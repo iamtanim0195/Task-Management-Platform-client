@@ -1,5 +1,5 @@
-import axios from "axios";
-
+import axios from 'axios'
+// Upload image in imgbb
 export const imageUpload = async image => {
     const formData = new FormData()
     formData.append('image', image)
@@ -7,5 +7,6 @@ export const imageUpload = async image => {
         `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMGBB_API_KEY}`,
         formData
     )
-    return data;
+    return data
 }
+

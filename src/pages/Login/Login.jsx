@@ -9,7 +9,7 @@ const Login = () => {
   const { signIn, signInWithGoogle, loading, setLoading } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
-  const from = location?.state?.pathname || '/'
+  const from = location?.state?.pathname || '/dashboard'
   //from submit handlers
   const handelSubmit = async event => {
     event.preventDefault();
