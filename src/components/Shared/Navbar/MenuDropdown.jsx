@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import useAuth from '../../../hooks/useAuth'
 import avatarImg from '../../../assets/images/placeholder.jpg'
-
+import { NavHashLink } from 'react-router-hash-link';
 const MenuDropdown = () => {
   const [isOpen, setIsOpen] = useState(false)
   const { user } = useAuth()
@@ -13,9 +13,24 @@ const MenuDropdown = () => {
       <div className='flex flex-row items-center gap-3'>
         {/* Become A Host btn */}
         <div className='hidden md:block'>
-          <button className='disabled:cursor-not-allowed cursor-pointer hover:bg-neutral-100 py-3 px-4 text-sm font-semibold rounded-full  transition'>
-            Host your home
-          </button>
+          <NavHashLink
+            smooth to="#audience"
+            className='disabled:cursor-not-allowed cursor-pointer hover:bg-neutral-100 py-3 px-4 text-sm font-semibold rounded-full  transition'
+          >
+            Audience
+          </NavHashLink>
+          <NavHashLink
+            smooth to="#about"
+            className='disabled:cursor-not-allowed cursor-pointer hover:bg-neutral-100 py-3 px-4 text-sm font-semibold rounded-full  transition'
+          >
+            About Us
+          </NavHashLink>
+          <NavHashLink
+            smooth to="#contact"
+            className='disabled:cursor-not-allowed cursor-pointer hover:bg-neutral-100 py-3 px-4 text-sm font-semibold rounded-full  transition'
+          >
+            Contact Us
+          </NavHashLink>
         </div>
         {/* Dropdown btn */}
         <div
@@ -39,13 +54,24 @@ const MenuDropdown = () => {
       {isOpen && (
         <div className='absolute rounded-xl shadow-md w-[40vw] md:w-[10vw] bg-white overflow-hidden right-0 top-12 text-sm'>
           <div className='flex flex-col cursor-pointer'>
-            <Link
-              to='/'
+            <NavHashLink
+              smooth to="#audience"
               className='block md:hidden px-4 py-3 hover:bg-neutral-100 transition font-semibold'
             >
-              Home
-            </Link>
-
+              Audience
+            </NavHashLink>
+            <NavHashLink
+              smooth to="#about"
+              className='block md:hidden px-4 py-3 hover:bg-neutral-100 transition font-semibold'
+            >
+              About Us
+            </NavHashLink>
+            <NavHashLink
+              smooth to="#contact"
+              className='block md:hidden px-4 py-3 hover:bg-neutral-100 transition font-semibold'
+            >
+              Contact Us
+            </NavHashLink>
             <Link
               to='/login'
               className='px-4 py-3 hover:bg-neutral-100 transition font-semibold'
