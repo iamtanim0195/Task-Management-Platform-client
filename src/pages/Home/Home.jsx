@@ -1,7 +1,15 @@
+import About from "./About"
+import Audience from "./Audience"
+import Banner from "./Banner"
+import Contact from "./Contact"
+
 const Home = () => {
   return (
     <div>
-      <h1>Welcome to StayVista</h1>
+      <Banner />
+      <Audience />
+      <About />
+      <Contact />
     </div>
   )
 }
