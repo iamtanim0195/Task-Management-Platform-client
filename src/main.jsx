@@ -8,14 +8,19 @@ import 'react-date-range/dist/styles.css'
 import 'react-date-range/dist/theme/default.css'
 import React from 'react'
 import { HelmetProvider } from 'react-helmet-async'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+
+const queryClient = new QueryClient(); // Create an instance of QueryClient
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <AuthProvider>
-      <HelmetProvider>
-        <Toaster />
-        <RouterProvider router={router} />
-      </HelmetProvider>
+      <QueryClientProvider client={queryClient}> {/* Provide the instance, not the class */}
+        <HelmetProvider>
+          <Toaster />
+          <RouterProvider router={router} />
+        </HelmetProvider>
+      </QueryClientProvider>
     </AuthProvider>
   </React.StrictMode>
 )

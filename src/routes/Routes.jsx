@@ -7,6 +7,8 @@ import SignUp from '../pages/SignUp/SignUp'
 import PrivateRoute from './PrivateRoute'
 import Profile from '../pages/Dashboard/pages/Profile'
 import DashboardLayout from '../layouts/DashboardLayout'
+import CreateTask from '../pages/Dashboard/pages/CreateTask'
+import TaskManagement from '../pages/Dashboard/pages/TaskManagement'
 
 export const router = createBrowserRouter([
   {
@@ -29,6 +31,14 @@ export const router = createBrowserRouter([
       {
         path: '/dashboard',
         element: <PrivateRoute><Profile /></PrivateRoute>,
+      },
+      {
+        path: 'Create-Task',
+        element: <PrivateRoute><CreateTask /></PrivateRoute>,
+      },
+      {
+        path: 'TaskManagement',
+        element: <PrivateRoute><TaskManagement /></PrivateRoute>,
       },
     ]
   },

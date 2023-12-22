@@ -26,3 +26,13 @@ export const getUsers = async () => {
     const { data } = await axiosSecure.get('/users')
     return data
 }
+//save a task data db
+export const addTask = async (taskData) => {
+    const { data } = await axiosSecure.post(`/tasks`, taskData);
+    return data;
+}
+//get task
+export const getTask = async () => {
+    const {data} = await axiosSecure(`/tasks`);
+    return data;
+};
